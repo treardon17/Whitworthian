@@ -1,0 +1,267 @@
+//in terminal --> recompiles style.css file
+// sass --watch style.scss:style.css
+
+
+$font-stack: Helvetica, sans-serif;
+$primary-color: #181818;
+$secondary-color: #fff;
+$light-text-color: #ffffff;
+$big-header-height: 10em;
+$header-footer-height: 5em;
+$header-icon-height: 3.5em;
+$menu-width: 15em;
+$menu-transition-time: .4s;
+$nav-item-transition-time: $menu-transition-time/2;
+
+
+html, body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+
+#intro-video{
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+#wrapper{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	
+	header {
+		position: relative;
+		height: $header-footer-height;
+		background-color: $primary-color;
+		margin: 0;
+		padding: 0;
+		text-align: center;
+		display: table;
+		width: 100%;
+		
+		//transitions
+		-webkit-transition: height $menu-transition-time; /* Safari */
+		transition: height $menu-transition-time;
+	    transition-timing-function: ease;
+		//end transitions
+		
+		#menu-icon {
+			position: absolute;
+			margin: auto;
+			left: 0;
+			top: 0;
+			bottom: 0;
+			height: $header-icon-height;
+			width: auto;
+			z-index: 1000;
+		}
+		#menu-icon:hover {
+			cursor: pointer;
+		}
+		
+		#twitter-icon {
+			position: absolute;
+			margin: auto;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			height: $header-icon-height;
+			width: auto;
+			z-index: 1000;
+		}
+		
+		#page-title{
+			color: $secondary-color;
+			position: relative;
+			margin: auto;
+			left: 0;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			width: auto;
+			display: table-cell;
+			vertical-align: middle;
+		}
+	}
+	
+	#nav-bar {
+		position: relative;
+		height: 100%;
+		float: left;
+		display: inline-block;
+		background-color: $primary-color;
+		margin: 0;
+		padding: 0;
+		overflow-y: auto;
+		overflow-x: hidden;
+		
+		//transitions
+		-webkit-transition: width $menu-transition-time; /* Safari */
+		transition: width $menu-transition-time;
+	    transition-timing-function: ease;
+		//end transitions
+		
+		//menu list
+		ul {
+			margin: 0;
+			padding: 0;
+		}
+		//menu list items
+		li {
+			list-style: none;
+			padding: 1em 0;
+			margin-left: 1em;
+		}
+		//menu links
+		a {
+			text-decoration: none;
+			color: $secondary-color;
+			width: 100%;
+		}
+		
+		.nav-item{
+			white-space: nowrap;
+			overflow: hidden;
+			
+			transition: opacity $nav-item-transition-time;
+			-webkit-transition: opacity $nav-item-transition-time;
+			-ms-transition: opacity $nav-item-transition-time;
+			-moz-transition: opacity $nav-item-transition-time;
+			-o-transition: opacity $nav-item-transition-time;
+			transition-timing-function: ease;
+		}
+	}
+	
+	#content{
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		display: inline-block;
+		overflow: auto;
+		
+			.news-box-container{
+				width: 100%;
+				
+				.news-box{				
+					float:left;
+					background-size: cover;
+					position: relative;
+					width: 30%;
+					height: 15em;
+					overflow:hidden;
+					height: 0;
+
+					.news-box-info{
+						position: absolute;
+						display: inline-block;
+						text-align: center;
+						width: 100%;
+						
+						.news-box-title{
+							position: relative;
+							margin: 0;
+							padding: 0;
+						}
+						.news-box-author{
+							margin: 0;
+							padding: 0;
+						}
+						.news-box-date{
+							margin: 0;
+							padding: 0;
+						}
+						.news-box-description{
+							margin: 0;
+							padding: 0;
+						}	
+					
+					}//end news box info
+				}//end news box
+			
+			.news-box-fader{
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				background-color: none;
+				//TRANSITION--------
+				-o-transition: ease 1s;
+			    -ms-transition: ease 1s;
+			    -moz-transition: ease 1s;
+			    -webkit-transition: ease 1s;
+			    transition: ease 1s;
+			    //END TRANSITION------
+			}
+			
+			.news-box-fader:hover{
+				background-color: $primary-color;
+				opacity: .8;
+			}//end news-box-info:hover
+		}//end news box container
+	}//end content
+}//end wrapper
+
+body {
+  font: 100% $font-stack;
+  color: $primary-color;
+}
+
+footer {
+	height: $header-footer-height;
+	width:100%;
+	background-color: $primary-color;
+	color: $light-text-color;
+	text-align: center;
+	position: absolute;
+	display: table;
+	bottom: 0;
+	
+	#copyright{
+		position: relative;
+		display : table-cell;
+		vertical-align : middle;
+	}
+	p {
+		margin: 0;
+	}
+}
+
+//HEADER CSS---------
+.big-header{
+	height: $big-header-height;
+}
+
+.small-header{
+	height: $header-footer-height;
+}
+
+//MENU CSS-----------
+
+.menu-showing{
+	width: $menu-width;
+}
+
+.menu-hiding{
+	width: 0;
+}
+
+.nav-item-showing{
+	opacity: 1;
+}
+
+.nav-item-hiding{
+	opacity: 0;
+}
+
+//FILTERS------------
+.grayscale { 
+    filter: grayscale(100%); /* Current draft standard */
+    -webkit-filter: grayscale(100%); /* New WebKit */
+    -moz-filter: grayscale(100%);
+    -ms-filter: grayscale(100%); 
+    -o-filter: grayscale(100%); /* Not yet supported in Gecko, Opera or IE */ 
+    filter: url(resources.svg#desaturate); /* Gecko */
+    filter: gray; /* IE */
+    -webkit-filter: grayscale(1); /* Old WebKit */
+}
