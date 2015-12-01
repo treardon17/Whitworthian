@@ -1,7 +1,9 @@
 html, body {
   margin: 0;
   padding: 0;
-  height: 100%; }
+  height: 100%;
+  font-family: "Lato", serif;
+  font-weight: Normal 400; }
 
 #intro-video {
   position: relative;
@@ -14,7 +16,6 @@ html, body {
   height: 100%; }
   #wrapper header {
     position: relative;
-    height: 5em;
     background-color: #181818;
     margin: 0;
     padding: 0;
@@ -28,6 +29,7 @@ html, body {
     #wrapper header #menu-icon {
       position: absolute;
       margin: auto;
+      margin-left: 0.3em;
       left: 0;
       top: 0;
       bottom: 0;
@@ -39,6 +41,7 @@ html, body {
     #wrapper header #twitter-icon {
       position: absolute;
       margin: auto;
+      margin-right: 0.3em;
       right: 0;
       top: 0;
       bottom: 0;
@@ -105,16 +108,23 @@ html, body {
         width: 30%;
         height: 15em;
         overflow: hidden;
-        height: 0; }
+        height: 0;
+        width: 33.3333333%;
+        padding-bottom: 33.3333333%; }
         #wrapper #content .news-box-container .news-box .news-box-info {
           position: absolute;
           display: inline-block;
-          text-align: center;
-          width: 100%; }
+          width: 100%;
+          text-align: left;
+          -o-transition: ease 1s;
+          -ms-transition: ease 1s;
+          -moz-transition: ease 1s;
+          -webkit-transition: ease 1s;
+          transition: ease 1s; }
           #wrapper #content .news-box-container .news-box .news-box-info .news-box-title {
+            font-size: 2em;
             position: relative;
-            margin: 0;
-            padding: 0; }
+            margin: 0; }
           #wrapper #content .news-box-container .news-box .news-box-info .news-box-author {
             margin: 0;
             padding: 0; }
@@ -124,7 +134,16 @@ html, body {
           #wrapper #content .news-box-container .news-box .news-box-info .news-box-description {
             margin: 0;
             padding: 0; }
+        #wrapper #content .news-box-container .news-box .news-box-info-hover {
+          text-align: center; }
+        #wrapper #content .news-box-container .news-box .news-box-info-hiding {
+          padding: 100;
+          display: none; }
+        #wrapper #content .news-box-container .news-box .news-box-info-showing {
+          padding: 0;
+          display: block; }
       #wrapper #content .news-box-container .news-box-fader {
+        z-index: 1000;
         position: absolute;
         width: 100%;
         height: 100%;
@@ -139,7 +158,7 @@ html, body {
         opacity: .8; }
 
 body {
-  font: 100% Helvetica, sans-serif;
+  font: 100% "Lato", serif;
   color: #181818; }
 
 footer {
@@ -159,7 +178,7 @@ footer {
     margin: 0; }
 
 .big-header {
-  height: 10em; }
+  height: 12em; }
 
 .small-header {
   height: 5em; }

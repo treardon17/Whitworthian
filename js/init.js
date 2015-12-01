@@ -31,6 +31,14 @@ function init(myPage){
 	jQuery("#content").on('click',function(){
 		hideMenu(myPage);
 	});
+	jQuery("#content").on("scroll",function(){		
+		if(jQuery("#content").scrollTop() > 0){
+			jQuery("header").removeClass("big-header").addClass("small-header");
+		}else{
+			jQuery("header").removeClass("small-header").addClass("big-header");
+		}
+	});
+
 }
 
 jQuery.noConflict()(function ($) {

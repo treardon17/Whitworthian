@@ -2,22 +2,33 @@
 // sass --watch style.scss:style.css
 
 
-$font-stack: Helvetica, sans-serif;
+//COLORS
 $primary-color: #181818;
 $secondary-color: #fff;
 $light-text-color: #ffffff;
-$big-header-height: 10em;
+
+//SIZES
+$big-header-height: 12em;
 $header-footer-height: 5em;
 $header-icon-height: 3.5em;
+$header-icon-margin: .3em;
 $menu-width: 15em;
+
+//TIME
 $menu-transition-time: .4s;
 $nav-item-transition-time: $menu-transition-time/2;
+$news-box-info-transition-time: 1s;
+
+//FONTS
+$font-stack: 'Lato', serif;
 
 
 html, body {
 	margin: 0;
 	padding: 0;
 	height: 100%;
+	font-family: $font-stack;
+	font-weight: Normal 400;
 }
 
 #intro-video{
@@ -33,7 +44,6 @@ html, body {
 	
 	header {
 		position: relative;
-		height: $header-footer-height;
 		background-color: $primary-color;
 		margin: 0;
 		padding: 0;
@@ -50,6 +60,7 @@ html, body {
 		#menu-icon {
 			position: absolute;
 			margin: auto;
+			margin-left: $header-icon-margin;
 			left: 0;
 			top: 0;
 			bottom: 0;
@@ -64,6 +75,7 @@ html, body {
 		#twitter-icon {
 			position: absolute;
 			margin: auto;
+			margin-right: $header-icon-margin;
 			right: 0;
 			top: 0;
 			bottom: 0;
@@ -152,17 +164,27 @@ html, body {
 					height: 15em;
 					overflow:hidden;
 					height: 0;
+					width: 33.3333333%;
+					padding-bottom: 33.3333333%;
 
 					.news-box-info{
 						position: absolute;
 						display: inline-block;
-						text-align: center;
 						width: 100%;
+						text-align: left;
+						
+						//TRANSITION--------
+						-o-transition: ease $news-box-info-transition-time;
+					    -ms-transition: ease $news-box-info-transition-time;
+					    -moz-transition: ease $news-box-info-transition-time;
+					    -webkit-transition: ease $news-box-info-transition-time;
+					    transition: ease $news-box-info-transition-time;
+					    //END TRANSITION------
 						
 						.news-box-title{
+							font-size: 2em;
 							position: relative;
 							margin: 0;
-							padding: 0;
 						}
 						.news-box-author{
 							margin: 0;
@@ -176,21 +198,33 @@ html, body {
 							margin: 0;
 							padding: 0;
 						}	
-					
 					}//end news box info
+					
+					.news-box-info-hover{
+						text-align: center;
+					}
+					.news-box-info-hiding{
+						padding: 100;
+						display: none;
+					}
+					.news-box-info-showing{
+						padding: 0;
+						display: block;
+					}
 				}//end news box
 			
 			.news-box-fader{
+				z-index: 1000;
 				position: absolute;
 				width: 100%;
 				height: 100%;
 				background-color: none;
 				//TRANSITION--------
-				-o-transition: ease 1s;
-			    -ms-transition: ease 1s;
-			    -moz-transition: ease 1s;
-			    -webkit-transition: ease 1s;
-			    transition: ease 1s;
+				-o-transition: ease $news-box-info-transition-time;
+			    -ms-transition: ease $news-box-info-transition-time;
+			    -moz-transition: ease $news-box-info-transition-time;
+			    -webkit-transition: ease $news-box-info-transition-time;
+			    transition: ease $news-box-info-transition-time;
 			    //END TRANSITION------
 			}
 			

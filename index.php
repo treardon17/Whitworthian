@@ -10,8 +10,8 @@
 			 ?>
 			<div id="content">
 				<?php
-					include_once("pages/newspage.php");
 					/*include_once("pages/intropage.php");*/
+					include_once("pages/newspage.php");
 				?>
 			</div>
 		</div>
