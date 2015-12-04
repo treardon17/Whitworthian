@@ -14,6 +14,7 @@
 					include_once("pages/newspage.php");
 				?>
 			</div>
+			<?php include_once("pages/footer.php") ?>
 		</div>
 		<script src="js/init.js"></script>
 	</body>	

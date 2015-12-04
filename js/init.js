@@ -19,7 +19,7 @@ function setArticleBoxWidth(numArticles){
 function setIntroHeight(){
 	var newHeight = jQuery(window).height();
 	newHeight = newHeight - jQuery("header").height();
-	jQuery("#news-page-intro").css({"height":newHeight+"px"});
+	jQuery(".news-page-intro").css({"height":newHeight+"px"});
 }
 
 //makes image background look like its scrolling slower than the content of the page
@@ -50,6 +50,18 @@ function hideMenu(myPage){
 }
 //END NAVIGATION STUFF
 
+//SCROLL STUFF-----------
+//determines the direction the user is scrolling
+function showFooter(myPage){
+	if(myPage.scrollPosPrev < jQuery("#content").scrollTop() || jQuery("#content").scrollTop() == 0){
+		jQuery("footer").removeClass("footer-show").addClass("footer-hide");
+	}else{	
+		jQuery("footer").removeClass("footer-hide").addClass("footer-show");
+	}
+	myPage.scrollPosPrev = jQuery("#content").scrollTop();
+}
+//END SCROLL STUFF
+
 //initializes page and adds event listeners to interactive items on the page
 function init(myPage){
 	setArticleBoxWidth(3);
@@ -61,6 +73,10 @@ function init(myPage){
 		}else{
 			hideMenu(myPage);
 		}
+	});
+	
+	jQuery(window).on('resize',function(){
+		setIntroHeight();
 	});
 	
 	//hide the menu if the user clicks on the content of the page
@@ -75,8 +91,8 @@ function init(myPage){
 		}else{
 			jQuery("header").removeClass("small-header").addClass("big-header");
 		}
-		
-		parallax(myPage); //makes the parallax effect
+		showFooter(myPage);
+		//parallax(myPage); //makes the parallax effect
 	});
 	
 	//on news box hover, change the appearance of the boxes

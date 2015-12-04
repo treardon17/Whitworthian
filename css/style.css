@@ -2,12 +2,17 @@ html, body {
   margin: 0;
   padding: 0;
   height: 100%;
-  font-family: "Lato", serif;
+  font-family: Arial;
   font-weight: Normal 400; }
 
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  letter-spacing: .2em;
+  font-family: "Quattrocento Sans"; }
+
+.title-heading {
+  margin: 1em; }
 
 #intro-video {
   position: relative;
@@ -103,16 +108,42 @@ h1, h2, h3, h4, h5, h6 {
     position: absolute;
     display: inline-block;
     overflow: auto; }
-    #wrapper #content #news-page-intro {
+    #wrapper #content .news-page-intro {
+      text-align: center;
+      position: relative;
       height: 30em;
-      background-size: cover; }
-      #wrapper #content #news-page-intro #new-this-week {
+      width: 100%;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position-x: 50%;
+      z-index: 200;
+      display: table; }
+      #wrapper #content .news-page-intro .news-page-dimmer {
+        position: absolute;
+        background-color: #181818;
+        width: 100%;
+        height: 100%;
+        opacity: .6;
+        z-index: 300; }
+      #wrapper #content .news-page-intro .new-this-week {
+        display: table-cell;
+        vertical-align: middle;
+        max-width: 30em;
+        width: 100%;
+        text-align: center;
+        position: relative;
         color: #fff;
-        margin: 0;
-        padding: 0; }
+        padding: 0;
+        z-index: 400; }
+        #wrapper #content .news-page-intro .new-this-week .new-this-week-desc {
+          max-width: 25em;
+          width: 90%;
+          margin: auto; }
     #wrapper #content .news-box-container {
+      padding-bottom: 15em;
       margin: 0 auto;
-      width: 90%; }
+      width: 90%;
+      overflow-y: auto; }
       #wrapper #content .news-box-container .news-box {
         float: left;
         background-size: cover;
@@ -181,24 +212,51 @@ h1, h2, h3, h4, h5, h6 {
           opacity: .8; }
 
 body {
-  font: 300 "Lato", serif;
+  font: 300 "Quattrocento Sans";
   color: #181818; }
 
 footer {
-  height: 5em;
   width: 100%;
-  background-color: #181818;
-  color: #ffffff;
+  background-color: #fff;
+  color: #181818;
   text-align: center;
-  position: absolute;
-  display: table;
-  bottom: 0; }
+  bottom: 0;
+  position: fixed;
+  z-index: 1500;
+  -o-transition: ease 0.1s;
+  -ms-transition: ease 0.1s;
+  -moz-transition: ease 0.1s;
+  -webkit-transition: ease 0.1s;
+  transition: ease 0.1s; }
   footer #copyright {
-    position: relative;
-    display: table-cell;
-    vertical-align: middle; }
+    text-align: center;
+    overflow: hidden;
+    margin: 0;
+    padding: 0; }
   footer p {
-    margin: 0; }
+    margin: 0;
+    padding: 0; }
+  footer .menu-items {
+    z-index: 2000;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    position: relative; }
+    footer .menu-items li {
+      display: inline-block;
+      float: left; }
+      footer .menu-items li a {
+        opacity: 1 !important;
+        display: inline-block;
+        text-decoration: none;
+        color: #181818; }
+
+.footer-hide {
+  height: 0;
+  overflow: hidden; }
+
+.footer-show {
+  height: 2.5em; }
 
 .big-header {
   height: 6em; }
