@@ -5,6 +5,7 @@
 //COLORS
 $primary-color: #181818;
 $secondary-color: #fff;
+$light-text-color: #a5a5a5;
 
 //SIZES
 $big-header-height: 6em;
@@ -12,6 +13,8 @@ $header-footer-height: 5em;
 $header-icon-height: 3.5em;
 $header-icon-margin: .3em;
 $menu-width: 15em;
+$news-box-title-spacing: .2em;
+$nex-box-title-size: 1.5em;
 
 //TIME
 $menu-transition-time: .4s;
@@ -222,74 +225,14 @@ h1, h2, h3, h4, h5, h6{
 					
 					.news-box-info{
 						position: absolute;
+						bottom: 0;
 						display: inline-block;
 						width: 100%;
-						
-						.news-box-title{
-							color: $secondary-color;
-							opacity: 0;
-							font-size: 1.5em;
-							text-align: center;
-							position: relative;
-							margin: 0;
-							//TRANSITIONS
-							-o-transition: ease $news-box-info-transition-time*2;
-							-ms-transition: ease $news-box-info-transition-time*2;
-							-moz-transition: ease $news-box-info-transition-time*2;
-							-webkit-transition: ease $news-box-info-transition-time*2;
-							transition: ease $news-box-info-transition-time*2;
-						}
-						
-						.news-box-title-active{
-							padding-top: 10%;
-							color: $secondary-color;
-							opacity: 1;
-						}
-						
-						.news-box-description{
-							position: absolute;
-							width: 100%;
-							color: $secondary-color;
-							text-align: left;
-							
-							//TRANSITIONS
-							-o-transition: ease $news-box-info-transition-time;
-							-ms-transition: ease $news-box-info-transition-time;
-							-moz-transition: ease $news-box-info-transition-time;
-							-webkit-transition: ease $news-box-info-transition-time;
-							transition: ease $news-box-info-transition-time;
-							
-							.news-box-author{
-								margin: 0;
-								padding: 0;
-							}
-							.news-box-date{
-								margin: 0;
-								padding: 0;
-							}
-							.news-box-description{
-								margin: 0;
-								padding: 0;
-							}
-						}
-					}//end news box info
-
-					.news-box-description-hiding{
-						padding:5em 0;
-						opacity: 0;
-					}
-					.news-box-description-showing{
-						padding: 0;
-						opacity: 1;
-					}
-					
-					//ON HOVER ACTIONS: NEWS BOX
-					.news-box-fader{
-						position: absolute;
+						height: 10%;
+						color: $secondary-color;
 						width: 100%;
-						height: 100%;
-						//background-color: $primary-color;
-						//opacity: .3;
+						background-color: $primary-color;
+						opacity: .8;
 						
 						//TRANSITION--------
 						-o-transition: ease $news-box-info-transition-time;
@@ -298,11 +241,17 @@ h1, h2, h3, h4, h5, h6{
 					    -webkit-transition: ease $news-box-info-transition-time;
 					    transition: ease $news-box-info-transition-time;
 					    //END TRANSITION------
-					}
+						
+						h3{
+							letter-spacing: $news-box-title-spacing;
+							font-size: $nex-box-title-size;
+						}
+						
+					}//end news box info
 					
-					.news-box-fader-active{
-						background-color: $primary-color;
-						opacity: .8;
+					//ON HOVER ACTIONS: NEWS BOX
+					.news-box-info-active{
+						height: 100%;
 					}					
 				}//end news box
 		}//end news box container
@@ -337,6 +286,7 @@ footer {
 		overflow: hidden;
 		margin: 0;
 		padding: 0;
+		height: 100%;
 	}
 	p {
 		margin: 0;
@@ -349,14 +299,27 @@ footer {
 	    margin: 0;
 	    padding: 0;
 	    position: relative;
+	    text-align: center;
+	    height: 100%;
+	    
 	    li{
 		    display: inline-block;
-		    float: left;
+			margin: 0 .2em;
+			height: 100%;
 			a{
 				opacity: 1 !important;
 				display: inline-block;
 				text-decoration: none;
-				color: $primary-color;
+				color: $light-text-color;
+				
+				position: relative;
+				top: 50%;
+				-webkit-transform: translateY(-50%);
+				-ms-transform: translateY(-50%);
+				transform: translateY(-50%);
+			}
+			ul{
+				display:none; //prevents sublists from being displayed in the footer
 			}
 	    }
 	}

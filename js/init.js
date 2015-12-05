@@ -97,12 +97,10 @@ function init(myPage){
 	
 	//on news box hover, change the appearance of the boxes
 	jQuery(".news-box").on('mouseover', function(){
-		jQuery(this).find(".news-box-fader").addClass("news-box-fader-active");
-		jQuery(this).find(".news-box-title").addClass("news-box-title-active");
+		jQuery(this).find(".news-box-info").addClass("news-box-info-active");
 	});
 	jQuery(".news-box").on('mouseout', function(){
-		jQuery(this).find(".news-box-fader").removeClass("news-box-fader-active");
-		jQuery(this).find(".news-box-title").removeClass("news-box-title-active");
+		jQuery(this).find(".news-box-info").removeClass("news-box-info-active");
 	});
 }
 
