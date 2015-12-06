@@ -96,11 +96,13 @@ function init(myPage){
 	});
 	
 	//on news box hover, change the appearance of the boxes
-	jQuery(".news-box").on('mouseover', function(){
+	jQuery(".news-box").on('mouseenter', function(){
 		jQuery(this).find(".news-box-info").addClass("news-box-info-active");
+		jQuery(this).find(".news-box-title-external-box").addClass("news-box-title-external-hiding");
 	});
-	jQuery(".news-box").on('mouseout', function(){
+	jQuery(".news-box").on('mouseleave', function(){
 		jQuery(this).find(".news-box-info").removeClass("news-box-info-active");
+		jQuery(this).find(".news-box-title-external-box").removeClass("news-box-title-external-hiding");
 	});
 }
 

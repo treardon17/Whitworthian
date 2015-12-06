@@ -134,11 +134,13 @@ h1, h2, h3, h4, h5, h6 {
         position: relative;
         color: #fff;
         padding: 0;
-        z-index: 400; }
+        z-index: 400;
+        font-size: 2em; }
         #wrapper #content .news-page-intro .new-this-week .new-this-week-desc {
           max-width: 25em;
           width: 90%;
-          margin: auto; }
+          margin: .5em auto;
+          font-size: 1em; }
     #wrapper #content .news-box-container {
       padding-bottom: 15em;
       margin: 0 auto;
@@ -153,14 +155,13 @@ h1, h2, h3, h4, h5, h6 {
         height: 0;
         width: 33.3333333%;
         padding-bottom: 33.3333333%; }
-        #wrapper #content .news-box-container .news-box .news-box-info {
+        #wrapper #content .news-box-container .news-box .news-box-title-external-box {
+          text-align: center;
           position: absolute;
+          width: 100%;
+          height: 3em;
           bottom: 0;
-          display: inline-block;
-          width: 100%;
-          height: 10%;
           color: #fff;
-          width: 100%;
           background-color: #181818;
           opacity: .8;
           -o-transition: ease 1s;
@@ -168,11 +169,34 @@ h1, h2, h3, h4, h5, h6 {
           -moz-transition: ease 1s;
           -webkit-transition: ease 1s;
           transition: ease 1s; }
-          #wrapper #content .news-box-container .news-box .news-box-info h3 {
+          #wrapper #content .news-box-container .news-box .news-box-title-external-box .news-box-title-external {
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%); }
+        #wrapper #content .news-box-container .news-box .news-box-title-external-hiding {
+          height: 0;
+          opacity: 0; }
+        #wrapper #content .news-box-container .news-box .news-box-info {
+          text-align: center;
+          position: absolute;
+          bottom: 0;
+          display: inline-block;
+          width: 100%;
+          color: #fff;
+          width: 100%;
+          background-color: #181818;
+          opacity: 0;
+          height: 100%;
+          -o-transition: ease 1s;
+          -ms-transition: ease 1s;
+          -moz-transition: ease 1s;
+          -webkit-transition: ease 1s;
+          transition: ease 1s; }
+          #wrapper #content .news-box-container .news-box .news-box-info .news-box-title {
             letter-spacing: 0.2em;
             font-size: 1.5em; }
         #wrapper #content .news-box-container .news-box .news-box-info-active {
-          height: 100%; }
+          opacity: .8; }
 
 body {
   font: 300 "Quattrocento Sans";
