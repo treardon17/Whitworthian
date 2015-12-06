@@ -88,8 +88,12 @@ function init(myPage){
 		//shrinks the header if the user scrolls past the top of the page	
 		if(jQuery("#content").scrollTop() > 0){
 			jQuery("header").removeClass("big-header").addClass("small-header");
+			jQuery("#w-logo").addClass("w-logo-header-small");
+			jQuery("#the-page-title").addClass("page-title-header-small");
 		}else{
 			jQuery("header").removeClass("small-header").addClass("big-header");
+			jQuery("#w-logo").removeClass("w-logo-header-small");
+			jQuery("#the-page-title").removeClass("page-title-header-small");
 		}
 		showFooter(myPage);
 		//parallax(myPage); //makes the parallax effect

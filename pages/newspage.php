@@ -10,7 +10,7 @@
 
 <div class="news-box-container">
 	<div class="news-box grayscale high-priority-news" style="background-image: url('images/articleimages/doorknob.JPG')">
-		<a href="http://www.google.com" class="news-box-fader"></a>
+		<a href="http://www.google.com" class="news-box-link"></a>
 		<div class="news-box-title-external-box">
 			<h3 class="news-box-title-external">This is a title</h3>
 		</div>
@@ -21,7 +21,7 @@
 		</div>
 	</div>
 	<div class="news-box grayscale low-priority-news" style="background-image: url('images/articleimages/baptism.JPG')">
-		<a href="http://www.google.com" class="news-box-fader"></a>
+		<a href="http://www.google.com" class="news-box-link"></a>
 		<div class="news-box-title-external-box">
 			<h3 class="news-box-title-external">This is a title</h3>
 		</div>
@@ -32,7 +32,7 @@
 		</div>
 	</div>
 	<div class="news-box grayscale medium-priority-news" style="background-image: url('images/articleimages/puddle.JPG')">
-		<a href="http://www.google.com" class="news-box-fader"></a>
+		<a href="http://www.google.com" class="news-box-link"></a>
 		<div class="news-box-title-external-box">
 			<h3 class="news-box-title-external">This is a title</h3>
 		</div>
@@ -43,7 +43,7 @@
 		</div>
 	</div>
 	<div class="news-box grayscale medium-priority-news" style="background-image: url('images/articleimages/ball.JPG')">
-		<a href="http://www.google.com" class="news-box-fader"></a>
+		<a href="http://www.google.com" class="news-box-link"></a>
 		<div class="news-box-title-external-box">
 			<h3 class="news-box-title-external">This is a title</h3>
 		</div>
@@ -54,7 +54,7 @@
 		</div>
 	</div>
 	<div class="news-box grayscale low-priority-news" style="background-image: url('images/articleimages/pinecone.JPG')">
-		<a href="http://www.google.com" class="news-box-fader"></a>
+		<a href="http://www.google.com" class="news-box-link"></a>
 		<div class="news-box-title-external-box">
 			<h3 class="news-box-title-external">This is a title</h3>
 		</div>
@@ -65,7 +65,7 @@
 		</div>
 	</div>
 	<div class="news-box grayscale low-priority-news" style="background-image: url('images/articleimages/band.JPG')">
-		<a href="http://www.google.com" class="news-box-fader"></a>
+		<a href="http://www.google.com" class="news-box-link"></a>
 		<div class="news-box-title-external-box">
 			<h3 class="news-box-title-external">This is a title</h3>
 		</div>
@@ -76,7 +76,7 @@
 		</div>
 	</div>
 	<div class="news-box grayscale low-priority-news" style="background-image: url('images/articleimages/giraffe.JPG')">
-		<a href="http://www.google.com" class="news-box-fader"></a>
+		<a href="http://www.google.com" class="news-box-link"></a>
 		<div class="news-box-title-external-box">
 			<h3 class="news-box-title-external">This is a title</h3>
 		</div>

@@ -47,6 +47,33 @@ h1, h2, h3, h4, h5, h6 {
       z-index: 1000; }
     #wrapper header #menu-icon:hover {
       cursor: pointer; }
+    #wrapper header #title-box {
+      display: table-cell;
+      vertical-align: middle;
+      text-align: center; }
+      #wrapper header #title-box #w-logo {
+        font-family: times serif;
+        font-weight: 200;
+        font-size: 3em;
+        color: #fff;
+        -o-transition: ease 0.5s;
+        -ms-transition: ease 0.5s;
+        -moz-transition: ease 0.5s;
+        -webkit-transition: ease 0.5s;
+        transition: ease 0.5s; }
+      #wrapper header #title-box #the-page-title {
+        color: #fff;
+        font-size: 1em;
+        -o-transition: ease 0.5s;
+        -ms-transition: ease 0.5s;
+        -moz-transition: ease 0.5s;
+        -webkit-transition: ease 0.5s;
+        transition: ease 0.5s; }
+      #wrapper header #title-box .page-title-header-small {
+        font-size: 1.5em !important;
+        letter-spacing: 0.4em; }
+      #wrapper header #title-box .w-logo-header-small {
+        font-size: 0em !important; }
     #wrapper header #twitter-icon {
       position: absolute;
       margin: auto;
@@ -57,17 +84,6 @@ h1, h2, h3, h4, h5, h6 {
       height: 3.5em;
       width: auto;
       z-index: 1000; }
-    #wrapper header #page-title {
-      color: #fff;
-      position: relative;
-      margin: auto;
-      left: 0;
-      right: 0;
-      top: 0;
-      bottom: 0;
-      width: auto;
-      display: table-cell;
-      vertical-align: middle; }
   #wrapper #nav-bar {
     position: relative;
     height: 100%;
@@ -155,6 +171,11 @@ h1, h2, h3, h4, h5, h6 {
         height: 0;
         width: 33.3333333%;
         padding-bottom: 33.3333333%; }
+        #wrapper #content .news-box-container .news-box .news-box-link {
+          z-index: 1500;
+          position: absolute;
+          height: 100%;
+          width: 100%; }
         #wrapper #content .news-box-container .news-box .news-box-title-external-box {
           text-align: center;
           position: absolute;
