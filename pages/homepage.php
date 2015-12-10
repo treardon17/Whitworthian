@@ -1,5 +1,5 @@
-<div id="content-wrapper" value="newspage">
-	<div class="news-page-intro" style="background-image: url('images/articleimages/baptism.JPG')">
+<div id="content-wrapper" value="homepage">
+	<div class="news-page-intro" style="background-image: url('images/articleimages/8snow.JPG')">
 		<div class="news-page-dimmer"></div>
 		<div class="new-this-week">
 			<h1>what's new this week?</h1>

@@ -214,6 +214,8 @@ h1, h2, h3, h4, h5, h6{
 		display: inline-block;
 		overflow: auto;
 		
+		#content-wrapper{
+			
 			.news-page-intro{
 				text-align: center;
 				position: relative;
@@ -224,143 +226,144 @@ h1, h2, h3, h4, h5, h6{
 				background-position-x: 50%;
 				z-index: 200;
 				display: table;
-				
-				.news-page-dimmer{
-					position: absolute;
-					background-color: $primary-color;
-					width: 100%;
-					height: 100%;
-					opacity: .6;
-					z-index: 300;
-				}
-				
-				.new-this-week{
-					display: table-cell;
-					vertical-align: middle;
-					max-width: 30em;
-					width: 100%;
-					text-align: center;
-					position: relative;
-					color: $secondary-color;
-					padding: 0;
-					z-index: 400;
-					font-size: 2em;
 					
-					.new-this-week-desc{
-						max-width: 25em;
-						width: 90%;
-						margin: .5em auto;
-						font-size: 1em;
-					}
-				}
-			}
-		
-			.news-box-container{
-				padding-bottom: 15em;
-				margin: 0 auto;
-				width: 90%;
-				overflow-y: auto;
-				
-				.news-box{
-					float:left;
-					position: relative;
-					height: 15em;
-					overflow:hidden;
-					height: 0;
-					width: 33.3333333%;
-					padding-bottom: 33.3333333%;
-					
-					.news-box-link{
-						z-index: 3000;
+					.news-page-dimmer{
 						position: absolute;
-						height: 100%;
-						width: 100%;
-					}
-					
-					.news-box-background{
-						background-size: cover;
-						position: absolute;
-						width: 100%;
-						height: 100%;
-					}
-					
-					.news-box-title-external-box{
-						text-align: center;
-						position: absolute;
-						width: 100%;
-						height: $news-box-title-external-height;
-						bottom: 0;
-						color: $secondary-color;
 						background-color: $primary-color;
-						opacity: .8;
-						
-						//TRANSITION--------
-						-o-transition: ease $news-box-info-transition-time;
-					    -ms-transition: ease $news-box-info-transition-time;
-					    -moz-transition: ease $news-box-info-transition-time;
-					    -webkit-transition: ease $news-box-info-transition-time;
-					    transition: ease $news-box-info-transition-time;
-					    //END TRANSITION------
-					    
-					    .news-box-title-external{
-						    position: relative;
-							top: 50%;
-							transform: translateY(-50%);
-					    }
+						width: 100%;
+						height: 100%;
+						opacity: .6;
+						z-index: 300;
 					}
 					
-					.news-box-title-external-hiding{
+					.new-this-week{
+						display: table-cell;
+						vertical-align: middle;
+						max-width: 30em;
+						width: 100%;
+						text-align: center;
+						position: relative;
+						color: $secondary-color;
+						padding: 0;
+						z-index: 400;
+						font-size: 2em;
+						
+						.new-this-week-desc{
+							max-width: 25em;
+							width: 90%;
+							margin: .5em auto;
+							font-size: 1em;
+						}
+					}
+				}
+			
+				.news-box-container{
+					padding-bottom: 15em;
+					margin: 0 auto;
+					width: 90%;
+					overflow-y: auto;
+					
+					.news-box{
+						float:left;
+						position: relative;
+						height: 15em;
+						overflow:hidden;
 						height: 0;
-						opacity: 0;
-					}
-					
-					.news-box-info{
-						text-align: center;
-						position: absolute;
-						display: inline-block;
-						color: $secondary-color;
-						background-color: $primary-color;
-						width: 100%;
-						height: 100%;
-						opacity: 0;
-						bottom: 0;
+						width: 33.3333333%;
+						padding-bottom: 33.3333333%;
 						
-						//TRANSITION--------
-						-o-transition: ease $news-box-info-transition-time;
-					    -ms-transition: ease $news-box-info-transition-time;
-					    -moz-transition: ease $news-box-info-transition-time;
-					    -webkit-transition: ease $news-box-info-transition-time;
-					    transition: ease $news-box-info-transition-time;
-					    //END TRANSITION------
-						
-						.news-box-title{
-							font-size: $nex-box-title-size;
-							margin-top: .5em !important;
+						.news-box-link{
+							z-index: 3000;
+							position: absolute;
+							height: 100%;
+							width: 100%;
 						}
 						
-						.news-box-author-image{
-							height: $news-box-author-image-dim;
-							width: auto;
+						.news-box-background{
+							background-size: cover;
+							position: absolute;
+							width: 100%;
+							height: 100%;
 						}
 						
-						.news-box-author{
-							margin: .5em auto;
+						.news-box-title-external-box{
+							text-align: center;
+							position: absolute;
+							width: 100%;
+							height: $news-box-title-external-height;
+							bottom: 0;
+							color: $secondary-color;
+							background-color: $primary-color;
+							opacity: .8;
+							
+							//TRANSITION--------
+							-o-transition: ease $news-box-info-transition-time;
+						    -ms-transition: ease $news-box-info-transition-time;
+						    -moz-transition: ease $news-box-info-transition-time;
+						    -webkit-transition: ease $news-box-info-transition-time;
+						    transition: ease $news-box-info-transition-time;
+						    //END TRANSITION------
+						    
+						    .news-box-title-external{
+							    position: relative;
+								top: 50%;
+								transform: translateY(-50%);
+						    }
 						}
 						
-						.news-box-description{
-							text-align: left;
-							width: 85%;
-							margin: .5em auto;
+						.news-box-title-external-hiding{
+							height: 0;
+							opacity: 0;
 						}
 						
-					}//end news box info
-					
-					//ON HOVER ACTIONS: NEWS BOX
-					.news-box-info-active{
-						opacity: .8;
-					}
-				}//end news box
-		}//end news box container
+						.news-box-info{
+							text-align: center;
+							position: absolute;
+							display: inline-block;
+							color: $secondary-color;
+							background-color: $primary-color;
+							width: 100%;
+							height: 100%;
+							opacity: 0;
+							bottom: 0;
+							
+							//TRANSITION--------
+							-o-transition: ease $news-box-info-transition-time;
+						    -ms-transition: ease $news-box-info-transition-time;
+						    -moz-transition: ease $news-box-info-transition-time;
+						    -webkit-transition: ease $news-box-info-transition-time;
+						    transition: ease $news-box-info-transition-time;
+						    //END TRANSITION------
+							
+							.news-box-title{
+								font-size: $nex-box-title-size;
+								margin-top: .5em !important;
+							}
+							
+							.news-box-author-image{
+								height: $news-box-author-image-dim;
+								width: auto;
+							}
+							
+							.news-box-author{
+								margin: .5em auto;
+							}
+							
+							.news-box-description{
+								text-align: left;
+								width: 85%;
+								margin: .5em auto;
+							}
+							
+						}//end news box info
+						
+						//ON HOVER ACTIONS: NEWS BOX
+						.news-box-info-active{
+							opacity: .8;
+						}
+					}//end news box
+			}//end news box container
+		}//end content-wrapper
 	}//end content
 }//end wrapper
 
@@ -377,7 +380,7 @@ footer {
 	text-align: center;
 	bottom: 0;
 	position: fixed;
-	z-index: 1500;
+	z-index: 3000;
 	
 	//TRANSITION--------
 	-o-transition: ease $footer-transition-time;
@@ -387,7 +390,7 @@ footer {
     transition: ease $footer-transition-time;
     //END TRANSITION------
 	
-	#copyright{
+	#bottom-menu{
 		text-align: center;
 		overflow: hidden;
 		margin: 0;

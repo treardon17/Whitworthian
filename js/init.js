@@ -48,6 +48,42 @@ function hideMenu(myPage){
 	jQuery("#nav-bar").removeClass("menu-showing").addClass("menu-hiding");
 	myPage.menuShowing = false;
 }
+
+//changes the page with $.ajax when user clicks a menu item
+function changePage(event, myPage){
+	//var $currentPage = jQuery("#content-wrapper").attr("value");
+	var currentPage = document.getElementById("content-wrapper").getAttribute("value");
+	var pageRequest = event.target.getAttribute("value");
+
+	
+	//checks if the user clicked a new page, not the current page
+	if(pageRequest == currentPage || pageRequest == null || currentPage == null){
+		return;
+	}else{
+		//store menu item id
+		history.pushState(null, null, event.target.getAttribute("href")); //change url
+		
+		var pagefile = "pages"+event.target.getAttribute("value")+".php";
+		if(pagefile == null){
+			return;
+		}
+				
+		//CHANGE PAGE STUFF HERE
+		jQuery.ajax({
+			//gets the filename from the menu item that was clicked
+			url: "pages/"+pageRequest+".php",
+			//if that worked, then replace the #body-wrapper with the new #body-wrapper
+			success: function(result){
+				deInit();
+				jQuery("#page-title").html(jQuery(event.target).html()+" | Whitworthian"); 	//changes the title of the page (on the page tab)
+				jQuery("#content-wrapper").replaceWith(result);								//replaces the contents of the page
+				hideMenu(myPage);
+				init(myPage);
+			}
+		});
+		event.preventDefault(); //don't open link in new tab
+	}
+}
 //END NAVIGATION STUFF
 
 //SCROLL STUFF-----------
@@ -61,6 +97,15 @@ function showFooter(myPage){
 	myPage.scrollPosPrev = jQuery("#content").scrollTop();
 }
 //END SCROLL STUFF
+
+//turns event listeners off so they can be reinitialized for the new items imported with $.ajax
+function deInit(){
+	jQuery("#menu-icon").off();
+	jQuery("#content").off();
+	jQuery(window).off();
+	jQuery(".menu-items").off();
+	jQuery(".news-box").off();
+}
 
 //initializes page and adds event listeners to interactive items on the page
 function init(myPage){
@@ -108,10 +153,15 @@ function init(myPage){
 		jQuery(this).find(".news-box-info").removeClass("news-box-info-active");
 		jQuery(this).find(".news-box-title-external-box").removeClass("news-box-title-external-hiding");
 	});
+	
+	//allows for page navigation
+	jQuery(".menu-items").on("click", function(event){
+		changePage(event, myPage);
+	});
 }
 
 jQuery.noConflict()(function ($) {
-    $(document).ready(function() {
+    $(document).ready(function($) {
        var myPage = {
 			menuShowing: false,
 			scrollPosCurrent: 0,

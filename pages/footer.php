@@ -1,5 +1,5 @@
 <footer class="footer-hide">
-	<div id="copyright">
+	<div id="bottom-menu">
 		<?php include("menu-items.php") ?>
 	</div>
 </footer>
