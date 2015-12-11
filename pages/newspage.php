@@ -1,4 +1,4 @@
-<div id="content-wrapper" value="newspage">
+<div id="content-wrapper" value="newspage" class="scene-element scene-element--fadeindown">
 	<div class="news-page-intro" style="background-image: url('images/articleimages/baptism.JPG')">
 		<div class="news-page-dimmer"></div>
 		<div class="new-this-week">

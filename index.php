@@ -8,7 +8,7 @@
 				include_once("pages/header.php");
 				include_once("pages/menu.php");
 			 ?>
-			<div id="content">
+			<div id="content" class="m-scene">
 				<?php
 					/*include_once("pages/intropage.php");*/
 					include_once("pages/homepage.php");
@@ -16,6 +16,7 @@
 			</div>
 			<?php include_once("pages/footer.php") ?>
 		</div>
+		<script src="js/prefixfree.min.js"></script>
 		<script src="js/init.js"></script>
 	</body>	
 </html>

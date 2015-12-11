@@ -1,4 +1,6 @@
-<div id="content-wrapper" value="homepage">
+<div id="content-wrapper" value="homepage" class="scene-element scene-element--fadeindown">
+	<a name="page-top" class="anchor"></a>
+
 	<div class="news-page-intro" style="background-image: url('images/articleimages/8snow.JPG')">
 		<div class="news-page-dimmer"></div>
 		<div class="new-this-week">

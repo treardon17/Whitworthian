@@ -54,34 +54,55 @@ function changePage(event, myPage){
 	//var $currentPage = jQuery("#content-wrapper").attr("value");
 	var currentPage = document.getElementById("content-wrapper").getAttribute("value");
 	var pageRequest = event.target.getAttribute("value");
-
+	scrollTop();
 	
 	//checks if the user clicked a new page, not the current page
 	if(pageRequest == currentPage || pageRequest == null || currentPage == null){
 		return;
 	}else{
-		//store menu item id
-		history.pushState(null, null, event.target.getAttribute("href")); //change url
 		
-		var pagefile = "pages"+event.target.getAttribute("value")+".php";
-		if(pagefile == null){
-			return;
-		}
+		var pagefile = "pages/"+event.target.getAttribute("value")+".php";
+		if(pagefile == null){ return; }
+		
+		//store menu item id
+		history.pushState(null, null, location.hash); //change url
 				
 		//CHANGE PAGE STUFF HERE
 		jQuery.ajax({
 			//gets the filename from the menu item that was clicked
-			url: "pages/"+pageRequest+".php",
-			//if that worked, then replace the #body-wrapper with the new #body-wrapper
+			url: pagefile,
+			//if that worked, then replace the #content-wrapper with the new #content-wrapper
 			success: function(result){
 				deInit();
 				jQuery("#page-title").html(jQuery(event.target).html()+" | Whitworthian"); 	//changes the title of the page (on the page tab)
+				jQuery("#the-page-title").html(jQuery(event.target).html());				//changes the title of the page (in the header)
 				jQuery("#content-wrapper").replaceWith(result);								//replaces the contents of the page
-				hideMenu(myPage);
+				//hideMenu(myPage);
 				init(myPage);
 			}
 		});
 		event.preventDefault(); //don't open link in new tab
+	}
+}
+
+//if the user types in the url for a specific page, it will redirect them to the correct page
+function pageRedirect(pageName, myPage){
+	var $pages = $(".nav-item");
+	
+	for(var i = 0; i<$pages.length; i++){
+		if($pages.eq(i).attr("value") == pageName){
+			$.ajax({
+				url: "pages/"+$pages.eq(i).attr("filename"),
+				success: function(result){
+					deInit();
+					console.log(pageName);
+					$("#page-title").html($("#menu-"+pageName).html()+" | PNWeb");
+					$("#body-wrapper").replaceWith(result);
+					hideMenu(myPage);
+					init(myPage);
+				}
+			});
+		}
 	}
 }
 //END NAVIGATION STUFF
@@ -95,6 +116,11 @@ function showFooter(myPage){
 		jQuery("footer").removeClass("footer-hide").addClass("footer-show");
 	}
 	myPage.scrollPosPrev = jQuery("#content").scrollTop();
+}
+
+//function to animate the scrolling effect to an anchor on the page
+function scrollTop(){
+    jQuery('html, body, #content').scrollTop(0);
 }
 //END SCROLL STUFF
 
@@ -157,6 +183,12 @@ function init(myPage){
 	//allows for page navigation
 	jQuery(".menu-items").on("click", function(event){
 		changePage(event, myPage);
+	});
+	
+	jQuery(window).on("popstate",function(event){
+		var pageHash = location.hash;
+		var pageName = pageHash.substring(1, pageHash.length);
+		console.log(pageName);												///----------------------------------------------------------------
 	});
 }
 
